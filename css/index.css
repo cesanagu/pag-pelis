@@ -1,0 +1,274 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+nav .left{
+  padding: 5px;
+  margin-left: 10px;
+}
+
+nav .left img{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+nav .right{
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+nav .right input{
+  width: 400px;
+  border: 1px solid #888;
+  height: 30px;
+  margin-right: 60px;
+  border-radius: 15px;
+  padding-left:5px;
+}
+
+nav .right input:hover{
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.right .text{
+  display: flex;
+  align-items: center;
+  width: 130px;
+}
+
+.text{
+  margin-right: 15px;
+}
+
+.text span{
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.text img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  border: 1px solid #777;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-areas: "side content";
+}
+
+.sidebar {
+  grid-area: side;
+  margin: 0;
+  padding: 0;
+  width: 75px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fd6564;
+}
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.content {
+  grid-area: content;
+  margin-left: 20px;
+}
+
+.icon span, .icon-bottom span{
+  font-size: 12px
+}
+
+.icon, .icon-bottom{
+  /* width: 70px;
+  height: 70px; */
+  text-align: center;
+}
+
+.icon img, .icon-bottom img{
+  width: 40px;
+  height: 40px;
+}
+
+.icon-bottom{
+  margin-bottom: 70px;
+}
+
+.item1, .item2, .item3{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 50px 200px;
+  grid-gap: 15px 5px;
+}
+
+.item1{
+  grid-template-areas: "title1 . ."
+                        "peli peli1 peli2";
+}
+
+.item2{
+  grid-template-areas: "title2 . ."
+                        "peli3 peli4 peli5";
+}
+
+.item3{
+  grid-template-areas: "title3 . ."
+                        "peli6 peli7 peli8";
+}
+
+.item1 h1, .item2 h1, .item3 h1{
+  margin: 5px 0px;
+  align-self: flex-end;
+  padding-left: 20px;
+  font-size:25px;
+}
+
+.item1 h1{
+  grid-area: title1;
+}
+
+.item2 h1{
+  grid-area: title2;
+}
+
+.item3 h1{
+  grid-area: title3;
+}
+
+.item-content,.item-content1, .item-content2, .item-content3,
+.item-content4,.item-content5, .item-content6, .item-content7, .item-content8{
+  display: flex;
+  align-items: flex-end;
+  background-image: url(https://coralspringstalk.com/wp-content/uploads/2020/03/secret.life_.pets_.movie_-e1541608557369-800x421.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 180px;
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+  border: 2px solid #fd6564;
+  border-radius: 15px;
+}
+
+.item-content{
+  grid-area: peli;
+}
+
+.item-content1{
+  grid-area: peli1;
+}
+
+.item-content2{
+  grid-area: peli2;
+}
+
+.item-content3{
+  grid-area: peli3;
+}
+
+.item-content4{
+  grid-area: peli4;
+}
+
+.item-content5{
+  grid-area: peli5;
+}
+
+.item-content6{
+  grid-area: peli6;
+}
+
+.item-content7{
+  grid-area: peli7;
+}
+
+.item-content8{
+  grid-area: peli8;
+}
+
+.item-text{
+  text-align: left;
+  display: flex;
+  background-color: rgba(255,255,255,0.7);
+  flex-direction: column;
+  width: 100%;
+  height: 70px;
+  border-radius: 15px;
+  justify-content: center;
+  padding: 0px 5px;
+}
+
+.item-text span:nth-child(1){
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+
+  nav{
+    display: block;
+    height: auto;
+  }
+
+  .left{
+    text-align: center;
+  }
+
+  nav .right input{
+    margin-right: 25px;
+  }
+
+  .text{
+    margin: 0px;
+  }
+
+  .container{
+    display: block;
+  }
+
+  .sidebar{
+    display: none;
+  }
+
+  .content {
+    margin-left: 0px;
+  }
+
+  .item1, .item2, .item3{
+    grid-gap: 0px;
+  }
+
+  .item1 h1, .item2 h1, .item3 h1{
+    font-size: 20px;
+    grid-column: 1/span 3;
+    margin: 0;
+    align-self: center;
+  }
+
+  .item-text{
+    height: auto;
+  }
+}
