@@ -1,3 +1,36 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?d6v1wx');
+  src:  url('../fonts/icomoon.eot?d6v1wx#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?d6v1wx') format('truetype'),
+    url('../fonts/icomoon.woff?d6v1wx') format('woff'),
+    url('../fonts/icomoon.svg?d6v1wx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-meni:before {
+  content: "\e9bd";
+}
+
+/* fonts */
+
 body{
   margin: 0;
   padding: 0;
@@ -5,23 +38,15 @@ body{
 }
 
 nav{
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 50px;
   box-shadow: 0 4px 2px -2px gray;
-}
-
-nav .left{
-  padding: 5px;
-  margin-left: 10px;
-}
-
-nav .left img{
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  background-color: #fff;
 }
 
 nav .right{
@@ -71,56 +96,83 @@ nav .right input:hover{
   grid-template-areas: "side content";
 }
 
-.sidebar {
-  grid-area: side;
-  margin: 0;
-  padding: 0;
-  width: 75px;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #fd6564;
-}
-
-.sidebar a {
-  display: block;
-  color: #fff;
-  padding: 10px;
-  text-decoration: none;
-}
-
 .content {
   grid-area: content;
   margin-left: 20px;
 }
 
-.icon span, .icon-bottom span{
-  font-size: 12px
+.nav-sidebar{
+  grid-area: side;
 }
 
-.icon, .icon-bottom{
-  /* width: 70px;
-  height: 70px; */
-  text-align: center;
+.burger-button{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
 }
 
-.icon img, .icon-bottom img{
-  width: 40px;
-  height: 40px;
+.btn-toggle-nav{
+  width: 60px;
+  height: 100%;
+  background-color: #f98f39;
+  cursor: pointer;
 }
 
-.icon-bottom{
-  margin-bottom: 70px;
+.btn-toggle-nav:hover{
+ opacity:0.5;
 }
+
+.nav-sidebar{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  padding: 0 5px;
+  height: calc(100vh - 50px);
+  background-color: #1b1b1b;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-sidebar ul {
+  padding-top: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.nav-sidebar ul li{
+  line-height: 60px;
+  list-style: none;
+}
+
+.nav-sidebar ul li span, .nav-sidebar ul li a{
+  display: block;
+  height: 60px;
+  padding: 0 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color:#fff;
+  font-family: arial;
+  font-size: 16px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-sidebar ul li a:hover{
+  background-color: #222;
+}
+
+
 
 .item1, .item2, .item3{
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 50px 200px;
+  grid-template-rows: 50px 350px;
   grid-gap: 15px 5px;
 }
 
@@ -162,11 +214,9 @@ nav .right input:hover{
 .item-content4,.item-content5, .item-content6, .item-content7, .item-content8{
   display: flex;
   align-items: flex-end;
-  background-image: url(https://coralspringstalk.com/wp-content/uploads/2020/03/secret.life_.pets_.movie_-e1541608557369-800x421.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 80%;
-  height: 180px;
+  height: 85%;
   width: 90%;
   justify-self: center;
   align-self: center;
@@ -174,39 +224,50 @@ nav .right input:hover{
   border-radius: 15px;
 }
 
+
+
 .item-content{
   grid-area: peli;
+  background-image: url(https://coralspringstalk.com/wp-content/uploads/2020/03/secret.life_.pets_.movie_-e1541608557369-800x421.jpeg);
 }
 
 .item-content1{
+  background-image: url(https://www.tolkienlibrary.com/press/images/movie-tie-in-The-hobbit.jpg);
   grid-area: peli1;
 }
 
 .item-content2{
+  background-image: url(https://ringostrack.com/storage/covers/12136_blood-diamond.jpg);
   grid-area: peli2;
 }
 
 .item-content3{
+  background-image: url(https://pics.filmaffinity.com/Shaft-140126935-large.jpg);
   grid-area: peli3;
 }
 
 .item-content4{
+  background-image: url(https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1570112411-510OaA6yM0L.jpg?crop=0.889xw:1xh;center,top&resize=480:*);
   grid-area: peli4;
 }
 
 .item-content5{
+  background-image: url(https://image.tmdb.org/t/p/w220_and_h330_face/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg);
   grid-area: peli5;
 }
 
 .item-content6{
+  background-image: url(https://amc-theatres-res.cloudinary.com/image/upload/v1518627851/amc-cdn/general/blog/02-14-ghibli-9.jpg);
   grid-area: peli6;
 }
 
 .item-content7{
+  background-image: url(https://images-na.ssl-images-amazon.com/images/I/71QNcGUE8aL._SY445_.jpg);
   grid-area: peli7;
 }
 
 .item-content8{
+  background-image: url(https://pbs.twimg.com/media/D0Q2T6bXcAIzTVT.jpg);
   grid-area: peli8;
 }
 
@@ -228,33 +289,12 @@ nav .right input:hover{
 
 @media (max-width: 900px) {
 
-  nav{
-    display: block;
-    height: auto;
-  }
-
   .left{
     text-align: center;
   }
 
-  nav .right input{
-    margin-right: 25px;
-  }
-
   .text{
     margin: 0px;
-  }
-
-  .container{
-    display: block;
-  }
-
-  .sidebar{
-    display: none;
-  }
-
-  .content {
-    margin-left: 0px;
   }
 
   .item1, .item2, .item3{
@@ -270,5 +310,65 @@ nav .right input:hover{
 
   .item-text{
     height: auto;
+  }
+}
+
+
+@media (max-width:600px) {
+
+  .container{
+    grid-template-columns: 60px 1fr;
+  }
+
+  nav .right{
+    width: 85%;
+  }
+
+  nav .right input{
+    width: 250px;
+  }
+}
+
+
+@media (max-width:480px) {
+
+  nav .right input{
+    width: 250px;
+    margin-right: 35px;
+  }
+
+  .right .text{
+    width: 140px;
+  }
+}
+
+@media (max-width:320px) {
+  nav{
+    display: block;
+    height: auto;
+  }
+
+  .btn-toggle-nav{
+    display: none;
+  }
+
+  .nav-sidebar{
+    display: none;
+  }
+
+  .container{
+    display: block;
+  }
+
+  .sidebar{
+    display: none;
+  }
+
+  .content {
+    margin-left: 0px;
+  }
+
+  .item-text{
+    font-size: 12px;
   }
 }
