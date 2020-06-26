@@ -289,6 +289,14 @@ nav .right input:hover{
 
 @media (max-width: 900px) {
 
+  .container{
+    grid-template-columns: 60px 1fr;
+  }
+
+  .content{
+    margin-left: 0;
+  }
+
   .left{
     text-align: center;
   }
@@ -316,12 +324,9 @@ nav .right input:hover{
 
 @media (max-width:600px) {
 
-  .container{
-    grid-template-columns: 60px 1fr;
-  }
 
   nav .right{
-    width: 85%;
+    width: 80%;
   }
 
   nav .right input{
@@ -331,6 +336,27 @@ nav .right input:hover{
 
 
 @media (max-width:480px) {
+
+  .content{
+    margin-top: 65px;
+  }
+
+  .item1, .item2, .item3{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .item-content,.item-content1, .item-content2, .item-content3,
+  .item-content4,.item-content5, .item-content6, .item-content7, .item-content8{
+  height: 350px;
+  margin-bottom:10px;
+  }
+
+  .item1 h1, .item2 h1, .item3 h1{
+    font-size: 30px;
+  }
 
   nav .right input{
     width: 250px;
@@ -346,6 +372,12 @@ nav .right input:hover{
   nav{
     display: block;
     height: auto;
+  }
+
+  .item-content,.item-content1, .item-content2, .item-content3,
+  .item-content4,.item-content5, .item-content6, .item-content7, .item-content8{
+  height: 250px;
+  margin-bottom:10px;
   }
 
   .btn-toggle-nav{
