@@ -164,10 +164,6 @@ nav .right input:hover{
   transition: all 0.3s ease-in-out;
 }
 
-.nav-sidebar ul li span{
-  margin-top: 50px;
-}
-
 .nav-sidebar ul li a:hover{
   background-color: #222;
 }
@@ -375,6 +371,10 @@ nav .right input:hover{
 
   .item1 h1, .item2 h1, .item3 h1{
     font-size: 30px;
+  }
+
+  .nav-sidebar ul{
+    margin-top: 70px;
   }
 
 }
