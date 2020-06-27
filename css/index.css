@@ -47,6 +47,7 @@ nav{
   height: 50px;
   box-shadow: 0 4px 2px -2px gray;
   background-color: #fff;
+  margin-left: 60px;
 }
 
 nav .right{
@@ -119,6 +120,9 @@ nav .right input:hover{
   height: 100%;
   background-color: #f98f39;
   cursor: pointer;
+  position: fixed;
+  left: 0;
+  z-index: 10;
 }
 
 .btn-toggle-nav:hover{
@@ -378,6 +382,7 @@ nav .right input:hover{
   nav{
     display: block;
     height: auto;
+    margin-left: 0;
   }
 
   nav .right{
