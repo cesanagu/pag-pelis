@@ -122,7 +122,7 @@ nav .right input:hover{
   cursor: pointer;
   position: fixed;
   left: 0;
-  z-index: 10;
+  z-index: 1001;
 }
 
 .btn-toggle-nav:hover{
